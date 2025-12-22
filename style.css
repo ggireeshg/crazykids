@@ -1,4 +1,5 @@
 
+/* ===== Global styles ===== */
 body{
   font-family: 'Poppins', Arial, sans-serif;
   margin:0;
@@ -48,6 +49,7 @@ nav a{
   color:#ff6f91;
 }
 
+/* ===== Horizontal auto-scrolling testimonials ===== */
 .testimonial-wrapper{
   overflow:hidden;
   width:100%;
@@ -56,7 +58,7 @@ nav a{
 .testimonial-track{
   display:flex;
   gap:30px;
-  animation: scroll 25s linear infinite;
+  animation: scrollTestimonials 40s linear infinite;
 }
 
 .testimonial{
@@ -76,6 +78,47 @@ nav a{
   margin-bottom:10px;
 }
 
+@keyframes scrollTestimonials{
+  0%{ transform: translateX(0); }
+  100%{ transform: translateX(-70%); }
+}
+
+/* ===== Handwriting page side video layout ===== */
+.page-layout{
+  display:grid;
+  grid-template-columns: 260px 1fr 260px;
+  gap:20px;
+  max-width:1200px;
+  margin:30px auto;
+}
+
+.video-sidebar{
+  background:#ffffff;
+  border-radius:15px;
+  padding:15px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.15);
+  height:520px;
+  overflow-y:auto;
+}
+
+.video-sidebar h3{
+  text-align:center;
+  color:#ff6f91;
+  margin-bottom:12px;
+}
+
+.video-list video{
+  width:100%;
+  margin-bottom:14px;
+  border-radius:10px;
+  cursor:pointer;
+}
+
+.main-content{
+  min-width:0;
+}
+
+/* ===== Footer ===== */
 footer{
   background:#ff9f1c;
   text-align:center;
@@ -84,7 +127,12 @@ footer{
   margin-top:40px;
 }
 
-@keyframes scroll{
-  0%{ transform: translateX(0); }
-  100%{ transform: translateX(-60%); }
+/* ===== Mobile responsive ===== */
+@media (max-width: 900px){
+  .page-layout{
+    grid-template-columns: 1fr;
+  }
+  .video-sidebar{
+    height:auto;
+  }
 }
