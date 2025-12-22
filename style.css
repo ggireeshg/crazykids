@@ -30,10 +30,56 @@ nav a{
   font-weight:bold;
 }
 
-.container{
-  padding:30px;
-  max-width:1000px;
-  margin:auto;
+/* ===== Top layout ===== */
+.page-layout{
+  display:grid;
+  grid-template-columns: 240px 1fr 240px;
+  gap:20px;
+  max-width:1200px;
+  margin:20px auto;
+  align-items:start;
+}
+
+/* ===== Vertical auto-scroll video bars ===== */
+.video-sidebar{
+  background:#ffffff;
+  border-radius:15px;
+  padding:12px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.15);
+  height:300px;              /* ~2 videos visible */
+  overflow:hidden;
+}
+
+.video-sidebar h3{
+  text-align:center;
+  color:#ff6f91;
+  margin:8px 0 12px;
+}
+
+.video-list{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  animation: verticalScroll 18s linear infinite;
+}
+
+.video-list video{
+  width:100%;
+  height:120px;
+  object-fit:cover;
+  border-radius:10px;
+  cursor:pointer;
+}
+
+/* Auto scroll animation */
+@keyframes verticalScroll{
+  0%{ transform: translateY(0); }
+  100%{ transform: translateY(-50%); }
+}
+
+/* ===== Main content ===== */
+.main-content{
+  min-width:0;
 }
 
 .card{
@@ -43,13 +89,19 @@ nav a{
   box-shadow:0 8px 20px rgba(0,0,0,0.15);
 }
 
+/* ===== Horizontal testimonials ===== */
+.container{
+  padding:20px;
+  max-width:1200px;
+  margin:10px auto;   /* pulls testimonials UP */
+}
+
 .section-title{
-  margin:40px 0 20px;
+  margin:20px 0 10px;
   text-align:center;
   color:#ff6f91;
 }
 
-/* ===== Horizontal auto-scrolling testimonials ===== */
 .testimonial-wrapper{
   overflow:hidden;
   width:100%;
@@ -58,7 +110,7 @@ nav a{
 .testimonial-track{
   display:flex;
   gap:30px;
-  animation: scrollTestimonials 40s linear infinite;
+  animation: scrollTestimonials 35s linear infinite;
 }
 
 .testimonial{
@@ -83,56 +135,69 @@ nav a{
   100%{ transform: translateX(-70%); }
 }
 
-/* ===== Handwriting page side video layout ===== */
-.page-layout{
-  display:grid;
-  grid-template-columns: 260px 1fr 260px;
-  gap:20px;
-  max-width:1200px;
-  margin:30px auto;
-}
-
-.video-sidebar{
-  background:#ffffff;
-  border-radius:15px;
-  padding:15px;
-  box-shadow:0 4px 12px rgba(0,0,0,0.15);
-  height:520px;
-  overflow-y:auto;
-}
-
-.video-sidebar h3{
-  text-align:center;
-  color:#ff6f91;
-  margin-bottom:12px;
-}
-
-.video-list video{
-  width:100%;
-  margin-bottom:14px;
-  border-radius:10px;
-  cursor:pointer;
-}
-
-.main-content{
-  min-width:0;
-}
-
-/* ===== Footer ===== */
 footer{
   background:#ff9f1c;
   text-align:center;
   padding:15px;
   color:white;
-  margin-top:40px;
+  margin-top:30px;
 }
 
-/* ===== Mobile responsive ===== */
+/* ===== Mobile ===== */
 @media (max-width: 900px){
   .page-layout{
-    grid-template-columns: 1fr;
+    grid-template-columns:1fr;
   }
   .video-sidebar{
-    height:auto;
+    height:220px;
   }
 }
+
+.video-list{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  animation: verticalScroll 18s linear infinite;
+}
+
+/* PAUSE when class added */
+.video-list.paused{
+  animation-play-state: paused;
+}
+
+.site-header{
+  background:#ffa726;              /* same orange */
+  display:flex;
+  align-items:center;
+  padding:20px 30px;
+  position:relative;
+}
+
+/* Logo on extreme left */
+.site-header .logo{
+  width:110px;
+  position:absolute;
+  right:30px;
+}
+
+/* Title perfectly centered */
+.site-title{
+  margin:0 auto;
+  font-size:32px;
+  font-weight:700;
+  color:#000;
+  text-align:center;
+}
+
+@media (max-width: 768px){
+  .site-title{
+    font-size:20px;
+    padding:0 10px;
+  }
+
+  .site-header .logo{
+    width:80px;
+    left:15px;
+  }
+}
+
