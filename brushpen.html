@@ -1,17 +1,15 @@
-
 <!DOCTYPE html>
 <html>
 <head>
   <title>Brush Pen Calligraphy - CrazyKids</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
 <header class="site-header">
   <img src="logo.png" alt="CrazyKids Logo" class="logo">
-
-  <h1 class="site-title">
-    Crazy Kids Handwriting and Calligraphy Classes
-  </h1>
+  <h1 class="site-title">Crazy Kids Handwriting and Calligraphy Classes</h1>
 </header>
 
 <nav>
@@ -21,16 +19,73 @@
   <a href="brushpen.html">Brush Pen</a>
   <a href="contact.html">Contact</a>
 </nav>
+
+<!-- TOP LAYOUT -->
+<div class="page-layout">
+
+  <!-- LEFT VIDEO BAR -->
+  <div class="video-sidebar">
+    <h3>Recent Brush Pen Work</h3>
+    <div class="video-list">
+      <video controls src="videos/brushpen1.mp4"></video>
+
+    </div>
+  </div>
+
+  <!-- CENTER CONTENT -->
+  <div class="main-content">
+    <div class="card">
+      <h1>Brush Pen Calligraphy</h1>
+      <ul>
+        <li>Basic brush strokes and pressure control</li>
+        <li>Modern calligraphy letter styles</li>
+        <li>Name writing and quote lettering</li>
+        <li>Improves hand coordination and creativity</li>
+        <li>Beginner friendly sessions for kids</li>
+      </ul>
+    </div>
+    <h2 class="section-title">Brush Pen Gallery</h2>
+  </div>
+
+  <!-- RIGHT VIDEO BAR -->
+  <div class="video-sidebar">
+    <h3>Recent works</h3>
+    <div class="video-list">
+      <video controls src="videos/brushpen4.mp4"></video>
+
+    </div>
+  </div>
+
+</div>
+
+<!-- BOTTOM HORIZONTAL PHOTOS -->
 <div class="container">
-  <div class="card">
-    <h1>Brush Pen Calligraphy</h1>
-    <ul>
-      <li>Basic strokes and techniques</li><li>Modern calligraphy styles</li><li>Name writing and quotes</li><li>Improves hand control and creativity</li><li>Beginner friendly sessions</li>
-    </ul>
+  <div class="testimonial-wrapper">
+    <div class="testimonial-track">
+      <div class="testimonial"><img src="images/penmandala/IMG-20210616-WA0029.jpg"></div>
+      <div class="testimonial"><img src="images/penmandala/IMG-20210618-WA0048.jpg"></div>
+      <div class="testimonial"><img src="images/penmandala/IMG-20210627-WA0046.jpg"></div>
+      <div class="testimonial"><img src="images/penmandala/IMG-20210629-WA0036.jpg"></div>
+      <div class="testimonial"><img src="images/penmandala/IMG-20210629-WA0040.jpg"></div>
+      <div class="testimonial"><img src="images/penmandala/IMG-20210630-WA0001.jpg"></div>
+      <div class="testimonial"><img src="images/penmandala/IMG-20210702-WA0019.jpg"></div>
+
+    </div>
   </div>
 </div>
+
 <footer>
   © CrazyKids Handwriting Classes | Prasanthi | +91 9964183162
 </footer>
+
+<script>
+  document.querySelectorAll('.video-sidebar video').forEach(video => {
+    const videoList = video.closest('.video-list');
+    video.addEventListener('play', () => videoList.classList.add('paused'));
+    video.addEventListener('pause', () => videoList.classList.remove('paused'));
+    video.addEventListener('ended', () => videoList.classList.remove('paused'));
+  });
+</script>
+
 </body>
 </html>

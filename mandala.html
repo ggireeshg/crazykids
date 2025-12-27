@@ -1,17 +1,15 @@
-
 <!DOCTYPE html>
 <html>
 <head>
   <title>Mandala Art Classes - CrazyKids</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
 <header class="site-header">
   <img src="logo.png" alt="CrazyKids Logo" class="logo">
-
-  <h1 class="site-title">
-    Crazy Kids Handwriting and Calligraphy Classes
-  </h1>
+  <h1 class="site-title">Crazy Kids Handwriting and Calligraphy Classes</h1>
 </header>
 
 <nav>
@@ -21,16 +19,72 @@
   <a href="brushpen.html">Brush Pen</a>
   <a href="contact.html">Contact</a>
 </nav>
+
+<!-- TOP LAYOUT -->
+<div class="page-layout">
+
+  <!-- LEFT VIDEO BAR -->
+  <div class="video-sidebar">
+    <h3>Mandala Creations</h3>
+    <div class="video-list">
+      <video controls src="videos/dotmandala/VID-20241128-WA0002.mp4"></video>
+      <video controls src="videos/dotmandala/VID-20241128-WA0002.mp4"></video>
+      <video controls src="videos/dotmandala/VID-20241128-WA0002.mp4"></video>
+      <video controls src="videos/dotmandala/VID-20241128-WA0002.mp4"></video>
+    </div>
+  </div>
+
+  <!-- CENTER CONTENT -->
+  <div class="main-content">
+    <div class="card">
+      <h1>Mandala Art Classes</h1>
+      <ul>
+        <li>Introduction to mandala patterns</li>
+        <li>Enhances focus and creativity</li>
+        <li>Step-by-step guided drawing</li>
+        <li>Relaxing and stress-relief sessions</li>
+        <li>Perfect for kids and beginners</li>
+      </ul>
+    </div>
+    <h2 class="section-title">Mandala Gallery</h2>
+  </div>
+
+  <!-- RIGHT VIDEO BAR -->
+  <div class="video-sidebar">
+    <h3>Mandala Creations</h3>
+    <div class="video-list">
+      <video controls src="videos/mandala4.mp4"></video>
+      <video controls src="videos/mandala4.mp4"></video>
+      <video controls src="videos/mandala4.mp4"></video>
+      <video controls src="videos/mandala4.mp4"></video>
+
+    </div>
+  </div>
+
+</div>
+
+<!-- BOTTOM HORIZONTAL PHOTOS -->
 <div class="container">
-  <div class="card">
-    <h1>Mandala Art Classes</h1>
-    <ul>
-      <li>Introduction to mandala patterns</li><li>Improves focus and creativity</li><li>Step-by-step guided drawings</li><li>Relaxing and stress-relief art sessions</li><li>Suitable for kids and beginners</li>
-    </ul>
+  <div class="testimonial-wrapper">
+    <div class="testimonial-track">
+      <div class="testimonial"><img src="testimonials/mandala1.jpg"></div>
+
+    </div>
   </div>
 </div>
+
 <footer>
   © CrazyKids Handwriting Classes | Prasanthi | +91 9964183162
 </footer>
+
+<script>
+  document.querySelectorAll('.video-sidebar video').forEach(video => {
+    const videoList = video.closest('.video-list');
+    video.addEventListener('play', () => videoList.classList.add('paused'));
+    video.addEventListener('pause', () => videoList.classList.remove('paused'));
+    video.addEventListener('ended', () => videoList.classList.remove('paused'));
+  });
+</script>
+
 </body>
 </html>
