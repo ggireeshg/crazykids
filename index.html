@@ -93,12 +93,18 @@
     <div class="testimonial-track">
 
 
-      <div class="testimonial">
-        <img src="images/certificates/img_1.png">
+
+      <div class="testimonial zoom-wrap">
+        <img src="images/certificates/img_1.png" onclick="openLightbox(this)">
+        <span class="zoom-icon" onclick="openLightbox(this.previousElementSibling)">🔍</span>
+        <p>Certificate</p>
       </div>
 
-      <div class="testimonial">
-        <img src="images/certificates/img.png">
+
+      <div class="testimonial zoom-wrap">
+        <img src="images/certificates/img.png" onclick="openLightbox(this)">
+        <span class="zoom-icon" onclick="openLightbox(this.previousElementSibling)">🔍</span>
+        <p>Certificate</p>
       </div>
 
       <div class="testimonial">
@@ -127,6 +133,12 @@
   © CrazyKids Handwriting Classes | Prasanthi | +91 9964183162
 </footer>
 
+<!-- IMAGE LIGHTBOX -->
+<div id="lightbox" class="lightbox">
+  <span class="lightbox-close">&times;</span>
+  <img class="lightbox-img" id="lightboxImg">
+</div>
+
 <!-- ================= VIDEO AUTO-SCROLL PAUSE ================= -->
 <script>
   document.querySelectorAll('.video-sidebar video').forEach(video => {
@@ -145,6 +157,29 @@
     });
   });
 </script>
+
+<script>
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+
+  function openLightbox(img) {
+    lightboxImg.src = img.src;
+    lightbox.style.display = 'flex';
+  }
+
+  document.querySelector('.lightbox-close').onclick = () => {
+    lightbox.style.display = 'none';
+  };
+
+  lightbox.onclick = (e) => {
+    if (e.target === lightbox) {
+      lightbox.style.display = 'none';
+    }
+  };
+</script>
+
+
+
 
 </body>
 </html>
