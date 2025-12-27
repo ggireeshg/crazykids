@@ -1,31 +1,30 @@
-
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Welcome to CrazyKids - CrazyKids</title>
+  <title>Crazy Kids Handwriting and Calligraphy Classes in Bengaluru</title>
+
   <link rel="stylesheet" href="style.css">
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Crazy Kids Handwriting and Calligraphy Classes in Bengaluru</title>
+  <meta name="description"
+        content="Crazy Kids Handwriting and Calligraphy Classes in Bengaluru. Cursive writing, print handwriting, mandala art and brush pen calligraphy for kids. Online and offline classes available.">
 
-  <meta name="description" content="Crazy Kids Handwriting and Calligraphy Classes in Bengaluru. We offer cursive writing, print handwriting, mandala art and brush pen calligraphy for kids. Offline and online classes available.">
-
-  <meta name="keywords" content="handwriting classes in bengaluru, kids handwriting classes, calligraphy classes, cursive writing classes, mandala classes for kids">
+  <meta name="keywords"
+        content="handwriting classes in bengaluru, kids handwriting classes, calligraphy classes, cursive writing classes, mandala classes for kids">
 
   <meta name="author" content="Crazy Kids Handwriting Classes">
 
-  <meta name="google-site-verification" content="_LlyIXy0lJUJuhBckBiOQBA5r89XmToN6S4Tr1urd3s" />
-
+  <meta name="google-site-verification"
+        content="_LlyIXy0lJUJuhBckBiOQBA5r89XmToN6S4Tr1urd3s" />
 </head>
+
 <body>
+
 <header class="site-header">
   <img src="logo.png" alt="CrazyKids Logo" class="logo">
-
-  <h1 class="site-title">
-    Crazy Kids Handwriting and Calligraphy Classes
-  </h1>
+  <h1 class="site-title">Crazy Kids Handwriting and Calligraphy Classes</h1>
 </header>
 
 <nav>
@@ -35,22 +34,113 @@
   <a href="brushpen.html">Brush Pen</a>
   <a href="contact.html">Contact</a>
 </nav>
-<div class="container">
-  <div class="card">
-    <h1>Welcome to CrazyKids</h1>
-    <p>
-      Crazy Kids Handwriting and Calligraphy Classes in Bengaluru provide professional
-      handwriting improvement for Age 6+ . We specialize in cursive writing, print handwriting, Lucida
-      mandala art and brush pen calligraphy. Classes are available both online and offline.
-    </p>
 
-    <ul>
-      <li>Fun, colorful and creative learning environment for kids</li><li>Experienced guidance by Prasanthi</li><li>Offline and Online classes available</li><li>Special focus on confidence and neat writing</li>
-    </ul>
+<!-- ================= TOP LAYOUT ================= -->
+<div class="page-layout">
+
+  <!-- LEFT VIDEO SIDEBAR -->
+  <div class="video-sidebar">
+    <h3>Student Feedback</h3>
+    <div class="video-list">
+<!--      <video controls src="videos/video (1).mp4"></video>-->
+<!--      <video controls src="videos/video (14).mp4"></video>-->
+<!--      <video controls src="videos/video (15).mp4"></video>-->
+    </div>
+  </div>
+
+  <!-- CENTER CONTENT -->
+  <div class="main-content">
+    <div class="card">
+      <h1>Welcome to CrazyKids</h1>
+
+      <p>
+        Crazy Kids Handwriting and Calligraphy Classes in Bengaluru provide professional
+        handwriting improvement for children aged 6+. We specialize in cursive writing,
+        print handwriting, mandala art and brush pen calligraphy. Classes are available
+        both online and offline.
+      </p>
+
+      <ul>
+        <li>Fun, colorful and creative learning environment for kids</li>
+        <li>Experienced guidance by Prasanthi</li>
+        <li>Offline and online classes available</li>
+        <li>Special focus on confidence, neatness and clarity</li>
+      </ul>
+    </div>
+
+    <h2 class="section-title">Crazy kids</h2>
+  </div>
+
+  <!-- RIGHT VIDEO SIDEBAR -->
+  <div class="video-sidebar">
+    <h3>Parent Feedback</h3>
+    <div class="video-list">
+<!--      <video controls src="videos/video (2).mp4"></video>-->
+<!--      <video controls src="videos/video (20).mp4"></video>-->
+<!--      <video controls src="videos/video (16).mp4"></video>-->
+    </div>
+  </div>
+
+</div>
+
+<!-- ================= BOTTOM HORIZONTAL PHOTOS ================= -->
+<div class="container">
+  <div class="testimonial-wrapper">
+    <div class="testimonial-track">
+
+
+      <div class="testimonial">
+        <img src="images/certificates/img_1.png">
+      </div>
+
+      <div class="testimonial">
+        <img src="images/certificates/img.png">
+      </div>
+
+      <div class="testimonial">
+        <img src="images/certificates/img_2.png">
+      </div>
+
+      <div class="testimonial">
+        <img src="images/certificates/img_3.png">
+      </div>
+
+      <div class="testimonial">
+        <img src="images/certificates/img_4.png">
+      </div>
+
+      <div class="testimonial">
+        <img src="images/certificates/img_5.png">
+      </div>
+
+
+
+    </div>
   </div>
 </div>
+
 <footer>
   © CrazyKids Handwriting Classes | Prasanthi | +91 9964183162
 </footer>
+
+<!-- ================= VIDEO AUTO-SCROLL PAUSE ================= -->
+<script>
+  document.querySelectorAll('.video-sidebar video').forEach(video => {
+    const videoList = video.closest('.video-list');
+
+    video.addEventListener('play', () => {
+      videoList.classList.add('paused');
+    });
+
+    video.addEventListener('pause', () => {
+      videoList.classList.remove('paused');
+    });
+
+    video.addEventListener('ended', () => {
+      videoList.classList.remove('paused');
+    });
+  });
+</script>
+
 </body>
 </html>
