@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Testimonials - CrazyKids</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+.video-scroll:hover{
+animation-play-state: paused;
+}
+.testimonial-page{
+max-width:1200px;
+margin:30px auto;
+padding:20px;
+}
+
+.video-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.video-card{
+background:white;
+padding:15px;
+border-radius:15px;
+box-shadow:0 4px 10px rgba(0,0,0,0.15);
+text-align:center;
+}
+
+.video-card iframe,
+.video-card video{
+width:100%;
+height:200px;
+border-radius:10px;
+}
+
+.stars{
+color:#ffc107;
+font-size:20px;
+margin-top:10px;
+}
+
+.testimonial-images{
+margin-top:40px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.testimonial-images img{
+width:100%;
+border-radius:12px;
+cursor:pointer;
+box-shadow:0 4px 10px rgba(0,0,0,0.15);
+}
+
+.whatsapp-btn{
+display:block;
+width:250px;
+margin:40px auto;
+padding:15px;
+background:#25D366;
+color:white;
+text-align:center;
+border-radius:10px;
+font-weight:bold;
+text-decoration:none;
+}
+
+</style>
+</head>
+
+<body>
+
+<header class="site-header">
+    <img src="logo.png" class="logo">
+    <h1 class="site-title">
+        Crazy Kids Handwriting and Calligraphy Classes
+    </h1>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="handwriting.html">Handwriting</a>
+    <a href="mandala.html">Mandala</a>
+    <a href="brushpen.html">Brush Pen</a>
+    <a href="testimonials.html">Testimonials</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<div class="testimonial-page">
+
+
+    <h2 class="section-title">Parent & Student Feedback</h2>
+
+    <div class="video-scroll-container">
+        <div class="video-scroll">
+
+            <div class="video-card">
+                <iframe src="https://www.youtube.com/embed/4Xq61-v5x7k" allowfullscreen>
+
+                </iframe>
+                <div class="stars">★★★★★</div>
+            </div>
+
+            <div class="video-card">
+                <iframe src="https://www.youtube.com/embed/pD8k5etvfd8" allowfullscreen>
+
+                </iframe>
+                <div class="stars">★★★★★</div>
+            </div>
+
+            <div class="video-card">
+                <iframe src="https://www.youtube.com/embed/ZiuiekzHbho" allowfullscreen>
+
+                </iframe>
+                <div class="stars">★★★★★</div>
+            </div>
+
+            <div class="video-card">
+                <iframe src="https://www.youtube.com/embed/6TUQ9V6XbsE" allowfullscreen>
+
+                </iframe>
+                <div class="stars">★★★★★</div>
+            </div>
+
+
+            <div class="video-card">
+                <iframe src="https://www.youtube.com/embed/yZXNxohq" allowfullscreen>
+
+                </iframe>
+                <div class="stars">★★★★★</div>
+            </div>
+
+
+
+            <div class="video-card">
+                <iframe src="https://www.youtube.com/embed/VOP1tlVzm14" allowfullscreen>
+
+                </iframe>
+                <div class="stars">★★★★★</div>
+            </div>
+
+
+            <div class="video-card">
+                <iframe src="https://www.youtube.com/embed/FQJZfkGlEvk" allowfullscreen>
+
+                </iframe>
+                <div class="stars">★★★★★</div>
+            </div>
+
+
+
+            <div class="video-card">
+                <iframe src="https://www.youtube.com/embed/dFsJsIY6OYk" allowfullscreen>
+
+                </iframe>
+                <div class="stars">★★★★★</div>
+            </div>
+
+            <div class="video-card">
+                <iframe src="https://www.youtube.com/embed/PsI64C6qKaM" allowfullscreen>
+
+                </iframe>
+                <div class="stars">★★★★★</div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+    <h2 class="section-title">Certificates & Written Feedback</h2>
+
+    <div class="testimonial-images">
+
+        <img src="images/certificates/img_1.png" onclick="openLightbox(this)">
+        <img src="images/certificates/img_2.png" onclick="openLightbox(this)">
+        <img src="images/certificates/img_3.png" onclick="openLightbox(this)">
+        <img src="images/certificates/img_4.png" onclick="openLightbox(this)">
+
+    </div>
+
+    <a class="whatsapp-btn"
+       href="https://wa.me/919964183162?text=I%20want%20to%20share%20feedback%20about%20CrazyKids%20classes">
+        Send Your Feedback on WhatsApp
+    </a>
+
+</div>
+
+<footer>
+    © CrazyKids Handwriting Classes | Prasanthi | +91 9964183162
+</footer>
+
+
+<!-- LIGHTBOX -->
+<div id="lightbox" class="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <img id="lightboxImg">
+</div>
+
+<script>
+
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightboxImg");
+
+function openLightbox(img){
+lightbox.style.display="flex";
+lightboxImg.src=img.src;
+}
+
+lightbox.onclick=function(){
+lightbox.style.display="none";
+}
+
+</script>
+
+</body>
+</html>
