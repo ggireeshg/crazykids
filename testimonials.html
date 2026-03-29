@@ -5,6 +5,115 @@
     <link rel="stylesheet" href="style.css">
 
     <style>
+
+/* ===== BASIC ===== */
+body{
+margin:0;
+font-family:Arial;
+background:#fff7c2;
+}
+
+h2{
+text-align:center;
+margin:20px 0;
+}
+
+/* ===== HEADER ===== */
+header{
+background:#ffa726;
+padding:15px;
+text-align:center;
+}
+
+nav{
+background:#2ec4b6;
+padding:10px;
+text-align:center;
+}
+
+nav a{
+color:white;
+margin:10px;
+text-decoration:none;
+font-weight:bold;
+}
+
+/* ===== CAROUSEL ===== */
+.carousel-container{
+position:relative;
+max-width:1200px;
+margin:30px auto;
+overflow:hidden;
+}
+
+.carousel{
+display:flex;
+gap:20px;
+transition:transform 0.5s ease;
+}
+
+.card{
+min-width:260px;
+background:white;
+border-radius:12px;
+box-shadow:0 4px 10px rgba(0,0,0,0.2);
+overflow:hidden;
+}
+
+/* ===== THUMBNAIL ===== */
+.thumb{
+position:relative;
+cursor:pointer;
+}
+
+.thumb img{
+width:100%;
+height:180px;
+object-fit:cover;
+}
+
+.play{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+font-size:40px;
+background:rgba(0,0,0,0.6);
+color:white;
+border-radius:50%;
+width:60px;
+height:60px;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+/* ===== ARROWS ===== */
+.arrow{
+position:absolute;
+top:40%;
+background:black;
+color:white;
+border:none;
+font-size:30px;
+padding:10px;
+cursor:pointer;
+z-index:10;
+}
+
+.left{ left:0; }
+.right{ right:0; }
+
+/* ===== FOOTER ===== */
+footer{
+background:#ffa726;
+text-align:center;
+padding:10px;
+color:white;
+margin-top:30px;
+}
+
+
 .video-scroll:hover{
 animation-play-state: paused;
 }
@@ -68,6 +177,11 @@ font-weight:bold;
 text-decoration:none;
 }
 
+@keyframes scrollVideos{
+0%{transform:translateX(0);}
+100%{transform:translateX(-50%);}
+}
+
 </style>
 </head>
 
@@ -94,81 +208,80 @@ text-decoration:none;
 
     <h2 class="section-title">Parent & Student Feedback</h2>
 
-    <div class="video-scroll-container">
-        <div class="video-scroll">
+    <div class="carousel-container">
 
-            <div class="video-card">
-                <iframe src="https://www.youtube.com/embed/4Xq61-v5x7k" allowfullscreen>
+        <button class="arrow left" onclick="move(-1)">❮</button>
 
-                </iframe>
-                <div class="stars">★★★★★</div>
+        <div class="carousel" id="carousel">
+
+            <!-- VIDEO 1 -->
+            <div class="card">
+                <div class="thumb" onclick="play(this,'4Xq61-v5x7k')">
+                    <img src="https://img.youtube.com/vi/4Xq61-v5x7k/hqdefault.jpg">
+                    <div class="play">▶</div>
+                </div>
             </div>
 
-            <div class="video-card">
-                <iframe src="https://www.youtube.com/embed/pD8k5etvfd8" allowfullscreen>
-
-                </iframe>
-                <div class="stars">★★★★★</div>
+            <!-- VIDEO 2 -->
+            <div class="card">
+                <div class="thumb" onclick="play(this,'pD8k5etvfd8')">
+                    <img src="https://img.youtube.com/vi/pD8k5etvfd8/hqdefault.jpg">
+                    <div class="play">▶</div>
+                </div>
             </div>
 
-            <div class="video-card">
-                <iframe src="https://www.youtube.com/embed/ZiuiekzHbho" allowfullscreen>
-
-                </iframe>
-                <div class="stars">★★★★★</div>
+            <!-- VIDEO 3 -->
+            <div class="card">
+                <div class="thumb" onclick="play(this,'ZiuiekzHbho')">
+                    <img src="https://img.youtube.com/vi/ZiuiekzHbho/hqdefault.jpg">
+                    <div class="play">▶</div>
+                </div>
             </div>
 
-            <div class="video-card">
-                <iframe src="https://www.youtube.com/embed/6TUQ9V6XbsE" allowfullscreen>
-
-                </iframe>
-                <div class="stars">★★★★★</div>
+            <!-- VIDEO 4 -->
+            <div class="card">
+                <div class="thumb" onclick="play(this,'6TUQ9V6XbsE')">
+                    <img src="https://img.youtube.com/vi/6TUQ9V6XbsE/hqdefault.jpg">
+                    <div class="play">▶</div>
+                </div>
             </div>
 
-
-            <div class="video-card">
-                <iframe src="https://www.youtube.com/embed/yZXNxohq" allowfullscreen>
-
-                </iframe>
-                <div class="stars">★★★★★</div>
+            <!-- VIDEO 5 -->
+            <div class="card">
+                <div class="thumb" onclick="play(this,'VOP1tlVzm14')">
+                    <img src="https://img.youtube.com/vi/VOP1tlVzm14/hqdefault.jpg">
+                    <div class="play">▶</div>
+                </div>
             </div>
 
-
-
-            <div class="video-card">
-                <iframe src="https://www.youtube.com/embed/VOP1tlVzm14" allowfullscreen>
-
-                </iframe>
-                <div class="stars">★★★★★</div>
+            <!-- VIDEO 6 -->
+            <div class="card">
+                <div class="thumb" onclick="play(this,'FQJZfkGlEvk')">
+                    <img src="https://img.youtube.com/vi/FQJZfkGlEvk/hqdefault.jpg">
+                    <div class="play">▶</div>
+                </div>
             </div>
 
-
-            <div class="video-card">
-                <iframe src="https://www.youtube.com/embed/FQJZfkGlEvk" allowfullscreen>
-
-                </iframe>
-                <div class="stars">★★★★★</div>
+            <!-- VIDEO 7 -->
+            <div class="card">
+                <div class="thumb" onclick="play(this,'dFsJsIY6OYk')">
+                    <img src="https://img.youtube.com/vi/dFsJsIY6OYk/hqdefault.jpg">
+                    <div class="play">▶</div>
+                </div>
             </div>
 
-
-
-            <div class="video-card">
-                <iframe src="https://www.youtube.com/embed/dFsJsIY6OYk" allowfullscreen>
-
-                </iframe>
-                <div class="stars">★★★★★</div>
+            <!-- VIDEO 8 -->
+            <div class="card">
+                <div class="thumb" onclick="play(this,'PsI64C6qKaM')">
+                    <img src="https://img.youtube.com/vi/PsI64C6qKaM/hqdefault.jpg">
+                    <div class="play">▶</div>
+                </div>
             </div>
-
-            <div class="video-card">
-                <iframe src="https://www.youtube.com/embed/PsI64C6qKaM" allowfullscreen>
-
-                </iframe>
-                <div class="stars">★★★★★</div>
-            </div>
-
-
 
         </div>
+
+        <button class="arrow right" onclick="move(1)">❯</button>
+
     </div>
 
     <h2 class="section-title">Certificates & Written Feedback</h2>
@@ -212,6 +325,29 @@ lightboxImg.src=img.src;
 
 lightbox.onclick=function(){
 lightbox.style.display="none";
+}
+
+</script>
+
+<script>
+
+let index=0;
+
+function move(direction){
+const carousel=document.getElementById("carousel");
+const cardWidth=280;
+
+index+=direction;
+
+if(index<0) index=0;
+
+carousel.style.transform="translateX("+(-index*cardWidth)+"px)";
+}
+
+/* play video */
+function play(el,id){
+el.innerHTML =
+'<iframe width="100%" height="180" src="https://www.youtube.com/embed/'+id+'?autoplay=1" frameborder="0" allowfullscreen></iframe>';
 }
 
 </script>
