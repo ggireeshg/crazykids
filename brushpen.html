@@ -18,14 +18,30 @@
   }
 
   function onPlayerStateChange(event) {
-    const videoList = event.target.getIframe().closest('.video-list');
+  const iframe = event.target.getIframe();
 
-    if (event.data === YT.PlayerState.PLAYING) {
-      videoList.classList.add('paused');
-    } else {
-      videoList.classList.remove('paused');
-    }
+  // go up safely to sidebar
+  const videoList = iframe.parentElement;
+
+  if (event.data === YT.PlayerState.PLAYING) {
+    videoList.classList.add('paused');
   }
+
+  if (event.data === YT.PlayerState.PLAYING) {
+  players.forEach(player => {
+    if (player !== event.target) {
+      player.pauseVideo();
+    }
+  });
+}
+
+  if (
+    event.data === YT.PlayerState.PAUSED ||
+    event.data === YT.PlayerState.ENDED
+  ) {
+    videoList.classList.remove('paused');
+  }
+}
 </script>
 
 
