@@ -289,7 +289,13 @@ transform:translateX(-50%);
   cursor: pointer;
 }
 
+.video-list {
+  animation: scroll 10s linear infinite;
+}
 
+.video-list.paused {
+  animation-play-state: paused;
+}
 .whatsapp-float{
 position:fixed;
 bottom:25px;

@@ -3,6 +3,33 @@
 <head>
   <title>Brush Pen Calligraphy - CrazyKids</title>
   <link rel="stylesheet" href="style.css">
+
+  <script>
+  let players = [];
+
+  function onYouTubeIframeAPIReady() {
+    document.querySelectorAll('.video-list iframe').forEach((iframe, index) => {
+      players[index] = new YT.Player(iframe, {
+        events: {
+          'onStateChange': onPlayerStateChange
+        }
+      });
+    });
+  }
+
+  function onPlayerStateChange(event) {
+    const videoList = event.target.getIframe().closest('.video-list');
+
+    if (event.data === YT.PlayerState.PLAYING) {
+      videoList.classList.add('paused');
+    } else {
+      videoList.classList.remove('paused');
+    }
+  }
+</script>
+
+
+
 </head>
 
 <body>
@@ -33,7 +60,7 @@
       <iframe
               width="250"
               height="120"
-              src="https://www.youtube.com/embed/4Xq61-v5x7k?rel=0&modestbranding=1"
+              src="https://www.youtube.com/embed/4Xq61-v5x7k??enablejsapi=1"
               title="YouTube video"
               frameborder="0"
               allowfullscreen>
@@ -42,7 +69,7 @@
       <iframe
               width="250"
               height="120"
-              src="https://youtube.com/embed/DpWfskT3kC4?rel=0&modestbranding=1"
+              src="https://youtube.com/embed/DpWfskT3kC4??enablejsapi=1"
               title="YouTube video"
               frameborder="0"
               allowfullscreen>
@@ -51,7 +78,7 @@
       <iframe
               width="250"
               height="120"
-              src="https://youtube.com/embed/plR0qFGFT-4?rel=0&modestbranding=1"
+              src="https://youtube.com/embed/plR0qFGFT-4??enablejsapi=1"
               title="YouTube video"
               frameborder="0"
               allowfullscreen>
@@ -85,7 +112,7 @@
       <iframe
               width="100%"
               height="200px"
-              src="https://www.youtube.com/embed/gz9aBrO9Y2o?rel=0&modestbranding=1"
+              src="https://www.youtube.com/embed/gz9aBrO9Y2o??enablejsapi=1"
               title="YouTube video"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
